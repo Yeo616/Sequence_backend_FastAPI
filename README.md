@@ -29,7 +29,7 @@ uvicorn main:app --reload
 
 ## 다른 프로젝트와 함께 사용하기
 
-- 바닐라 자바스크립트 상태 관리 시퀀스: https://github.com/Yeo616/vanilla-javascript-sequence/blob/main/README.md
+- 바닐라 자바스크립트 상태 관리 시퀀스: https://github.com/Yeo616/vanilla-javascript-sequence
 
 <br>
 
