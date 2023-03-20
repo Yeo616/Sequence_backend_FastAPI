@@ -9,7 +9,7 @@
 2. 해당 폴더로 이동
 3. 파이썬 가상환경 설치
 ```
-python3 -m venv venv
+python -m venv venv
 ```
 4. 가상환경 실행
 5. 패키지 설치
@@ -20,7 +20,6 @@ pip install -r requirements.txt
 ```
 uvicorn main:app --reload
 ```
-<br>
 
 ### 주의
 - 파이썬의 가상 환경 모듈인 'venv'를 사용하려면 파이썬 버젼이 3.3이상이어야 합니다.
@@ -35,7 +34,7 @@ uvicorn main:app --reload
 ## 기능 및 스크린샷
 > 여기서 DB는 mongoDB의 test DB의 user_db 컬렉션을 말합니다.
 
-/get-email API
+### /get-email API
 > 기능: 유저의 이메일을 이용하여, 다른 데이터가 DB에 저장 되어있는지 확인합니다. 
 > 해당 예제에서는 phone_number가 있는지 확인하였습니다. 
 
@@ -48,7 +47,7 @@ uvicorn main:app --reload
 
 <br/>
 
-/post-infoAPI
+### /post-infoAPI
 > 기능: 인증된 이메일로, 찾고자 하는 유저의 데이터가 DB에 없을 경우, 추가합니다. 
 > 해당 예제에서는 phone_number가 있는지 확인하였습니다. 
 > 
