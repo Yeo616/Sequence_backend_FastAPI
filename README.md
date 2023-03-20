@@ -53,5 +53,5 @@ uvicorn main:app --reload
 > 
 ![enter image description here](https://user-images.githubusercontent.com/102447800/226253461-205c917e-174e-4c6f-a8c0-9b03f521d2bc.gif)
 
-## 연락처 정보
-guswls9281@bitsol.kr
+## 프로젝트 제작자 연락처
+guswls9281@gmail.com
