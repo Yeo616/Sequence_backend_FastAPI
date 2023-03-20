@@ -25,14 +25,17 @@ uvicorn main:app --reload
 - 파이썬의 가상 환경 모듈인 'venv'를 사용하려면 파이썬 버젼이 3.3이상이어야 합니다.
 - 작업은 가상환경에서 실행하도록 합니다.
 
-
+<br>
 
 ## 다른 프로젝트와 함께 사용하기
 
 - 바닐라 자바스크립트 상태 관리 시퀀스: https://github.com/Yeo616/vanilla-javascript-sequence/blob/main/README.md
 
+<br>
+
+
 ## 기능 및 스크린샷
-> 여기서 DB는 mongoDB의 test DB의 user_db 컬렉션을 말합니다.
+여기서 DB는 mongoDB의 test DB의 user_db 컬렉션을 말합니다.
 
 ### /get-email API
 > 기능: 유저의 이메일을 이용하여, 다른 데이터가 DB에 저장 되어있는지 확인합니다. 
@@ -52,6 +55,8 @@ uvicorn main:app --reload
 > 해당 예제에서는 phone_number가 있는지 확인하였습니다. 
 > 
 ![enter image description here](https://user-images.githubusercontent.com/102447800/226253461-205c917e-174e-4c6f-a8c0-9b03f521d2bc.gif)
+
+<br>
 
 ## 프로젝트 제작자 연락처
 guswls9281@gmail.com
