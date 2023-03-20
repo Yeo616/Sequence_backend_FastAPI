@@ -33,8 +33,15 @@ uvicorn main:app --reload
 
 <br>
 
+## 기능
+- 데이터 조회
+- 데이터 입력하여 DB에 저장
 
-## 기능 및 스크린샷
+## 사용된 기술
+- FastAPI
+- MongoDB
+
+## 스크린샷
 여기서 DB는 mongoDB의 test DB의 user_db 컬렉션을 말합니다.
 
 ### /get-email API
