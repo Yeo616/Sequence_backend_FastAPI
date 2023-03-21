@@ -91,3 +91,16 @@ def post_info(info = Form(...), email = Form(...)):
         logger.info("no matched email")
         raise HTTPException(status_code=404, detail="Post not found")
 
+@app.delete("/delete-info")
+async def delete_post(email: str):
+
+    db = myclient["test"]["user_db"]
+    try:
+        deleted_info = db.update_one(
+            {"email": email},
+            {"$unset":{"phone_number":""}}) 
+        logger.info(f"content_to_delete : {deleted_info}")
+        return {"status":f"{deleted_info}"}
+        
+    except IndexError:
+        raise HTTPException(status_code=404, detail="email not found")
