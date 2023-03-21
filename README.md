@@ -4,6 +4,7 @@
 - 상태 시퀀스에 관한 back-end 부분입니다.
 - 해당 프로젝트는 FastAPI로 작성하였습니다. 
 
+ [Fastapi 공식문서](https://fastapi.tiangolo.com/)
 
 ## 시작하기
 1. 프로젝트 폴더 생성
