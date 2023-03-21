@@ -8,7 +8,7 @@ app = FastAPI() # => FastAPI 클래스의 인스턴스 생성
 
 myclient = pymongo.MongoClient("mongodb://localhost:27017/")
 
-logger = logging.getLogger('story_CRUD')                                               # Logger 인스턴스 생성, 命名
+logger = logging.getLogger('info_test')                                               # Logger 인스턴스 생성, 命名
 logger.setLevel(logging.DEBUG)                                                       # Logger 출력 기준
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')# Formatter 생성, log 출력 형식
 
@@ -91,8 +91,8 @@ def post_info(info = Form(...), email = Form(...)):
         logger.info("no matched email")
         raise HTTPException(status_code=404, detail="Post not found")
 
-@app.delete("/delete-info")
-async def delete_post(email: str):
+@app.post("/delete-info")
+async def delete_post(email: str = Query(...)):
 
     db = myclient["test"]["user_db"]
     try:
@@ -100,7 +100,8 @@ async def delete_post(email: str):
             {"email": email},
             {"$unset":{"phone_number":""}}) 
         logger.info(f"content_to_delete : {deleted_info}")
-        return {"status":f"{deleted_info}"}
+
+        return {"status":"info deleted"}
         
     except IndexError:
         raise HTTPException(status_code=404, detail="email not found")
