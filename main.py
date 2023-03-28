@@ -1,4 +1,4 @@
-from fastapi import FastAPI,HTTPException, Form, Query # => FastAPI 클래스의 인스턴스 생성
+from fastapi import FastAPI,HTTPException, Form, Query,Body # => FastAPI 클래스의 인스턴스 생성
 from bson.objectid import ObjectId
 import logging
 import pymongo
@@ -72,6 +72,27 @@ async def read_info(email: str = Query(...)):
 
 @app.post("/post-info") 
 def post_info(info = Form(...), email = Form(...)):
+    logger.info(f"{info} posted")
+
+    #프로그램 관련 DB 연결
+    db = myclient['test']['user_db']
+
+    try:
+         # program_info_db = list(program_info_db)
+        updated = db.update_one({"email": email},
+                    {"$set":{"phone_number" : info}})
+        content = db.find_one({"email": email})
+
+        logger.info(f"updated : {updated}")
+
+        return {"status": f"{content}"}
+
+    except IndexError:
+        logger.info("no matched email")
+        raise HTTPException(status_code=404, detail="Post not found")
+
+@app.post("/post-info-body") 
+def post_info(info = Body(...) , email= Body(...)):
     logger.info(f"{info} posted")
 
     #프로그램 관련 DB 연결
